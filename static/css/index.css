@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.centered-container {
+    text-align: center;
+}
+
+.centered-container h1 {
+    color: #d62976;
+    font-size: 4.5vw; /* Responsive font size */
+    margin-bottom: 2vh;
+}
+
+.centered-container p {
+    margin-bottom: 2vh;
+}
+
+.centered-container form {
+    margin-bottom: 2vh;
+}
+
+.centered-container input[type="text"] {
+    padding: 1.5vh 1vw;
+    margin-right: 1vw;
+    font-size: 1.2vw; /* Responsive font size */
+}
+
+.centered-container button {
+    padding: 1.5vh 2vw;
+    font-size: 1.2vw; /* Responsive font size */
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05); /* Increase size by 5% */
+    filter: brightness(90%); /* Darken by 10% */
+}

@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invalid Account!</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
     <div class="centered-container">
@@ -13,10 +13,9 @@
         <!--MODIFY IN FLASK TO GO TO THE '/' route-->
         
         <!--MODIFY THE ACTIONS IN FLASK-->
-        <form method="post">
-            <button type="submit" style="background-color: green; color: white;">Yes</button>
-            <button type="submit" style="background-color: red; color: white;">No</button>
-        </form>
+        <button type="submit" style="background-color: green; color: white;" onclick="window.location.href='/game'">Yes</button>
+        <button type="submit" style="background-color: red; color: white;" onclick="window.location.href='/'">No</button>
+    
     </div>
 </body>
 </html>

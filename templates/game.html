@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    
+</head>
+<body>
+    <div class="centered-container" style="margin-bottom: 6.2vh">
+        <h1 style="font-size: 2.1em; top: 12%">Who is this?</h1>
+
+        <img src="{{ url_for('static', filename='images/ayen.png') }}" alt="unknown" style="width: 100%; height: 50%; margin-top: 2vh; border-radius:200px;" id="pfpImage">
+        
+        <form>
+            <br>
+            <input type="text" name="username" placeholder="Username" required>
+            <button id="submitBtn" type="submit" style="background-color: green; color: white;">Submit</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

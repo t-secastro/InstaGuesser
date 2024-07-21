@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
-import random
 
 app = Flask(__name__)
+
+"""
+# Note -> the following data was used for testing purposes as we get permissions to start using insta queries, whether through the API or through web scraping/proxying we will use the functions below -> for now hardcode the problem
 
 def process_search_results(search_json, target_username):
     data = json.loads(search_json)
@@ -39,7 +41,9 @@ def wrapper(search_json, followers_json, target_username):
     return {
         'user': user,
         'followers': followers
-    }
+    }"""
+
+# KEY NOTE ON JSON -> the data in the JSON data is hard coded for now, but will be replaced with the actual data from the API / web scraping in the future when that implementation is done!
 
 @app.route('/', methods=['GET', 'POST'])
 def search():
@@ -64,7 +68,16 @@ def verify():
 def error():
     return render_template('error.html')
 
+@app.route('/game', methods=['GET'])
+def game():
+    return render_template('game.html')
 
+# the routes below are for communicating between server (flask) to client (javascript)
+@app.route('/data', methods=['GET'])
+def send_data():
+    with open('response.json', 'r') as file:
+        data = json.load(file)
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
