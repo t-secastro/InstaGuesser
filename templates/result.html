@@ -3,12 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invalid Account!</title>
-    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
     <div class="centered-container">
         <!--IN FLASK MODIFY HOW THE IMAGES ARE COMING IN!-->
-        <img src="../images/unnamed.png" style="border-radius: 300px;">
+        <img src="{{ url_for('static', filename='images/sudip.png') }}" style="border-radius: 300px;">
         <p>Is this you!?</p>
         <!--MODIFY IN FLASK TO GO TO THE '/' route-->
         
