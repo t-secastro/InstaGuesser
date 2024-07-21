@@ -1,0 +1,36 @@
+{   
+    "users": [
+        {
+            "username" : "sudip.tt0",
+            "name": "Sudiptto",
+            "pfp": "images/sudip.png",
+            "following": [
+                {
+                    "name" : "Adam",
+                    "instagram_username": "adamaithel",
+                    "pfp": "images/adam_ait.png"
+                },
+                {
+                    "name": "Hobbs",
+                    "instagram_username": "hobonthegob",
+                    "pfp": "images/hobbs.png"
+                },
+                {
+                    "name": "Samin",
+                    "instagram_username": "samin.sarwar",
+                    "pfp": "images/samin.png"
+                },
+                {
+                    "name": "Ayen",
+                    "instagram_username": "ayenmonasha",
+                    "pfp": "images/ayen.png"
+                },
+                {
+                    "name": "Sebastian",
+                    "instagram_username": "sebastianc764",
+                    "pfp": "images/sebastian.png"
+                }
+            ]
+        }
+    ]
+}
