@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import json
 import random
 
@@ -44,57 +44,21 @@ def wrapper(search_json, followers_json, target_username):
 @app.route('/', methods=['GET', 'POST'])
 def search():
     if request.method == 'POST':
+        # grab username
         target_username = request.form['username']
-
-        # Example usage
-        search_json = '''
-        {
-        "users": [
-            {
-            "user": {
-                "username": "example_user",
-                "full_name": "Example User",
-                "profile_pic_url": "https://example.com/example_user.jpg"
-            }
-            },
-            {
-            "user": {
-                "username": "target_user",
-                "full_name": "Target User",
-                "profile_pic_url": "https://example.com/target_user.jpg"
-            }
-            }
-        ]
-        }
-        '''
-
-        followers_json = '''{
-        "following": [
-            {
-            "username": "exampleUser1",
-            "full_name": "Example User One",
-            "profile_pic_url": "http://example.com/pic1.jpg"
-            },
-            {
-            "username": "exampleUser2",
-            "full_name": "Example User Two",
-            "profile_pic_url": "http://example.com/pic2.jpg"
-            },
-            {
-            "username": "exampleUser3",
-            "full_name": "Example User three",
-            "profile_pic_url": "http://example.com/pic3.jpg"
-            }
-        ]
-        }'''
-
-        result = wrapper(search_json, followers_json, target_username)
-        if result:
-            return render_template('result.html', result=result)
+        
+        # check if username is sudip.tt0 (hardcode until API)
+        if target_username == 'sudip.tt0':
+            return redirect(url_for("verify"))
         else:
-            return error()
-    else:
-        return render_template('search.html')
+            return redirect(url_for("error"))
+    
+    # for GET requests
+    return render_template('search.html')
+
+@app.route('/verify', methods=['POST', 'GET'])
+def verify():
+    return render_template('result.html')
 
 @app.route('/error', methods=['GET'])
 def error():
