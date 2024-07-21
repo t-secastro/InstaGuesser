@@ -2,6 +2,25 @@
 let followingData = [];
 let currentUser = null;
 let currentIndex = 0; // Track the current user index in the shuffled array
+let score = 0; // Initialize score
+let hintPressCount = 0; // Track the number of times the hint button is pressed
+
+// Update score and display it
+function updateScore(correct) {
+    if (correct) {
+        score++;
+        document.getElementById('score').textContent = score;
+    }
+}
+
+// Modified showHint function
+function showHint() {
+    if (currentUser && currentUser.name) {
+        hintPressCount++; // Increment the hint press count
+        const hintLetters = currentUser.name.substring(0, hintPressCount); // Get the first N letters
+        document.getElementById('hint').textContent = hintLetters; // Display the hint letters
+    }
+}
 
 // Shuffle the array to ensure a random order without repetition
 function shuffleArray(array) {
@@ -32,6 +51,7 @@ function displayRandomUser() {
             imageElement.src = '/static/' + currentUser.pfp; // Set the image source
         }
         currentIndex++; // Move to the next user
+        hintPressCount = 0; // Reset the hint press count
     } else {
         alert('Congratulations! You have guessed all users.');
         window.location.href = '/'; // Redirect to the main page
@@ -43,6 +63,7 @@ document.getElementById('submitBtn').addEventListener('click', function(event) {
     event.preventDefault(); // Stop the form from submitting
     const inputElement = document.querySelector('input[name="username"]');
     if (inputElement && currentUser && inputElement.value === currentUser.name) {
+        updateScore(true); // Update the score
         if (currentIndex >= followingData.length) {
             alert('Congratulations! You have guessed all users.');
             window.location.href = '/';

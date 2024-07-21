@@ -42,3 +42,16 @@ button:hover {
     transform: scale(1.05); /* Increase size by 5% */
     filter: brightness(90%); /* Darken by 10% */
 }
+
+.hint-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2.0vw;
+} 
+
+.hint-container #hintButton, .hint-container #hint {
+    font-size: 20px; /* Adjust the size as needed */
+}
