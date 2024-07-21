@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Guesser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="centered-container">
+        <h1>Insta Guesser</h1>
+        <p>Enter Username</p>
+        <form method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <button type="submit">Play</button>
+        </form>
+        <button onclick="alert('How it works: Enter an Instagram username to start guessing!')">How it works</button>
+    </div>
+</body>
+</html>
