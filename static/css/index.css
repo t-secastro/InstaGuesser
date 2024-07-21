@@ -55,3 +55,10 @@ button:hover {
 .hint-container #hintButton, .hint-container #hint {
     font-size: 20px; /* Adjust the size as needed */
 }
+
+#pfpImage {
+    width: 20vw; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 2vh;
+    border-radius: 50%; /* Make it a circle */
+}

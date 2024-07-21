@@ -8,22 +8,22 @@
 </head>
 <body>
     <div class="centered-container" style="margin-bottom: 6.2vh">
-        <h1 style="font-size: 2.1em; top: 12%">Score: <span id="score">0</span></h1>
+        <h2 style="font-size: 2.1em; top: 12%">Score: <span id="score">0</span></h2>
         <h1 style="font-size: 2.1em; top: 12%">Who is this?</h1>
 
-        <img src="{{ url_for('static', filename='images/ayen.png') }}" alt="unknown" style="width: 100%; height: 50%; margin-top: 2vh; border-radius:200px;" id="pfpImage">
+        <img src="{{ url_for('static', filename='images/ayen.png') }}" alt="unknown" id="pfpImage">
         
         <form>
             <br>
             <input type="text" name="username" placeholder="Username" required>
             <button id="submitBtn" type="submit" style="background-color: green; color: white;">Submit</button>
         </form>
+        <span id="hint" style="padding-left: 10px; padding-bottom: 20px;"></span>
+        <br>
+        <button id="hintButton" onclick="showHint()" >Show Hint</button>
+        
     </div>
     
-    <div class="hint-container">
-        <button id="hintButton" onclick="showHint()" >Show Hint</button>
-        <span id="hint" style="padding-left: 10px;"></span>
-    </div>
 
     <button onclick="window.location.href='/'" style="background-color: #f44336; color: white; padding: 15px 30px; font-size: 16px; position: fixed; bottom: 10px; left: 10px;">Go Back</button>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>

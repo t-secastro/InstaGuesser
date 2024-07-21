@@ -52,6 +52,10 @@ function displayRandomUser() {
         }
         currentIndex++; // Move to the next user
         hintPressCount = 0; // Reset the hint press count
+
+        // Reset the hint text to an empty string
+        document.getElementById('hint').textContent = '';
+
     } else {
         alert('Congratulations! You have guessed all users.');
         window.location.href = '/'; // Redirect to the main page
